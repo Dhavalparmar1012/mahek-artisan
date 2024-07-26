@@ -162,7 +162,6 @@ const ReviewPage = () => {
             }}
           >
             <UINewTypography
-              variant="h1"
               color="text.secondary"
               sx={{
                 textAlign: "center",

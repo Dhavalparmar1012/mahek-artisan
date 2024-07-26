@@ -35,7 +35,6 @@ const ArtPage = () => {
           }}
         >
           <UINewTypography
-            variant="h1"
             color="text.secondary"
             sx={{
               textAlign: "center",
