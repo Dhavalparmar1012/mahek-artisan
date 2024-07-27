@@ -162,6 +162,7 @@ const ReviewPage = () => {
             }}
           >
             <UINewTypography
+              variant="h1"
               color="text.secondary"
               sx={{
                 textAlign: "center",
@@ -350,7 +351,6 @@ const ReviewPage = () => {
                           readOnly
                         />
                         <UINewTypography variant="subtitle">
-                          {/* {`Jan 8, 2024 ${review.createdAt} by ${review.fname}`} */}
                           {moment(review.createdAt).format("MMM D, YYYY")} by{" "}
                           {review.fname}
                         </UINewTypography>
