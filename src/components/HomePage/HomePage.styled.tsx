@@ -11,7 +11,7 @@ export const InformationLayoutContainer = styled(Box)(() => ({
   flexDirection: "column",
 }));
 
-export const MehndiServiceMainContainer = styled(Box)(() => ({
+export const MehndiServiceMainContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(1),
@@ -33,7 +33,7 @@ export const MehndiServiceTitle = styled(UINewTypography)(() => ({
   },
 }));
 
-export const ScrollToTopIconsContainer = styled(Box)(() => ({
+export const ScrollToTopIconsContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   zIndex: 1000,
@@ -41,11 +41,4 @@ export const ScrollToTopIconsContainer = styled(Box)(() => ({
   bottom: theme.spacing(2),
   right: theme.spacing(2),
   gap: theme.spacing(1),
-}));
-
-export const ContactContainer = styled(Box)(() => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: theme.spacing(0.5),
-  width: "100%",
 }));

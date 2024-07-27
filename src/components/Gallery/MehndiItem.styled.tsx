@@ -1,3 +1,4 @@
+// IMPORT MUI
 import { Box, styled } from "@mui/material";
 
 export const BenefitsItemContainer = styled(Box)(({ theme }) => ({

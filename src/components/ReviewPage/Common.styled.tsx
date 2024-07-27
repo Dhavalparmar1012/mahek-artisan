@@ -1,6 +1,7 @@
 import theme from "@/theme";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
+import UINewTypography from "../UIComponent/UINewTypography";
 
 export const MainContainerSpace = styled(Box)(() => ({
   display: "flex",
@@ -31,4 +32,16 @@ export const HeadlinePink = styled(Box)(() => ({
     marginRight: "auto",
     marginLeft: "auto",
   },
+}));
+
+export const TitleLineContainer = styled(Box)(() => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: theme.spacing(0.5),
+}));
+
+export const ServicesTitle = styled(UINewTypography)(() => ({
+  color: "#6488ea",
+  textAlign: "center",
 }));

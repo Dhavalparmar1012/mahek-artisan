@@ -1,15 +1,16 @@
+import { useState } from "react";
 import Box from "@mui/material/Box";
-
-import UINewTypography from "../UIComponent/UINewTypography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import IconButton from "@mui/material/IconButton";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { useState } from "react";
+
+// IMPORT PROJECT
 import {
   BenefitsItemContainer,
   BenefitsItemContent,
 } from "./MehndiItem.styled";
 import BridalDialog_leg from "./BridalDialog_leg";
+import UINewTypography from "../UIComponent/UINewTypography";
 
 const Bridal_leg = ({ image, title }: { image: string; title: string }) => {
   const [isFavorite, setIsFavorite] = useState(false);

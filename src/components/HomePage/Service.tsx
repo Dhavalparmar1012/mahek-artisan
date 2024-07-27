@@ -1,15 +1,22 @@
+// IMPORT MUI
 import React from "react";
+
+// IMPORT PROJECT
 import { ReviewTitleMainContainer } from "../ReviewPage/Review.styled";
 import UINewTypography from "../UIComponent/UINewTypography";
-import { HeadlinePink } from "../ReviewPage/Common.styled";
+import {
+  HeadlinePink,
+  ServicesTitle,
+  TitleLineContainer,
+} from "../ReviewPage/Common.styled";
 
 const Service = () => {
   return (
     <ReviewTitleMainContainer>
-      <UINewTypography variant="h2" textAlign="center" color="#6488ea">
-        Services
-      </UINewTypography>
-      <HeadlinePink />
+      <TitleLineContainer>
+        <ServicesTitle variant="h2">Services</ServicesTitle>
+        <HeadlinePink />
+      </TitleLineContainer>
       <UINewTypography variant="SubtitleLargeBold">
         I can do Mehndi/Henna for just about any occasion. I Specialize in
         Bridal Mehndi, Sangeet Parties, Engagements, Baby Showers, Birthday

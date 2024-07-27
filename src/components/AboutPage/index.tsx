@@ -8,7 +8,14 @@ import ContainerV2 from "../UIComponent/ContainerV2";
 import MainLayout from "@/layouts/MainLayout/MainDashboardLayout";
 import UINewTypography from "../UIComponent/UINewTypography";
 import { InformationLayoutContainer } from "../HomePage/HomePage.styled";
-import { ArtContainer, ArtImageBox, ArtMainContainer } from "./ArtPage.styled";
+import {
+  AboutTitle,
+  ArtCommonContainer,
+  ArtContainer,
+  ArtImageBox,
+  ArtMainContainer,
+  ArtSImageBox,
+} from "./ArtPage.styled";
 
 const ArtPage = () => {
   return (
@@ -51,17 +58,11 @@ const ArtPage = () => {
           <ArtMainContainer>
             <ArtImageBox src="images/Mehndi_latest/Bridal_hand/Bridal_hand_6.jpg" />
           </ArtMainContainer>
-          <InformationLayoutContainer
-            sx={{ gap: 4, alignItems: "start", maxWidth: 614, mx: "auto" }}
-          >
+          <ArtCommonContainer>
             <ArtContainer>
-              <UINewTypography
-                variant="SubtitleLargeBold"
-                align="left"
-                color="#6488ea"
-              >
+              <AboutTitle variant="SubtitleLargeBold">
                 What is Mehndi?
-              </UINewTypography>
+              </AboutTitle>
               <Box component="ul" pl={3}>
                 <Box component="li">
                   <UINewTypography variant="subtitleLargeRegular">
@@ -86,20 +87,13 @@ const ArtPage = () => {
                 </Box>
               </Box>
             </ArtContainer>
-            <Box
-              component="img"
-              src="images\Mehndi_latest\Bridal_hand\Bridal_hand_14.jpg"
-              width="100%"
-            />
+
+            <ArtSImageBox src="images\Mehndi_latest\Bridal_hand\Bridal_hand_14.jpg" />
 
             <ArtContainer>
-              <UINewTypography
-                variant="SubtitleLargeBold"
-                align="left"
-                color="#6488ea"
-              >
+              <AboutTitle variant="SubtitleLargeBold">
                 Uses of Mehndi
-              </UINewTypography>
+              </AboutTitle>
               <Box component="ul" pl={3}>
                 <Box component="li">
                   <UINewTypography variant="subtitleLargeRegular">
@@ -135,7 +129,7 @@ const ArtPage = () => {
                 </Box>
               </Box>
             </ArtContainer>
-          </InformationLayoutContainer>
+          </ArtCommonContainer>
         </ContainerV2>
       </MainLayout>
     </Scrollbars>

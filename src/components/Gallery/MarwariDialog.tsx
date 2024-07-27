@@ -1,6 +1,7 @@
+// IMPORT MUI
+import React from "react";
 import Box from "@mui/material/Box";
 import Dialog from "@mui/material/Dialog";
-import React from "react";
 
 const MarwariDialog = ({
   open,

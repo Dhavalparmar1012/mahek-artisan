@@ -1,8 +1,11 @@
+// IMPORT MUI
 import React from "react";
 import { Fab } from "@mui/material";
 import Link from "next/link";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
+
+// IMPORT PROJECT
 import { ScrollToTopIconsContainer } from "./HomePage.styled";
 
 const ScrollToTopIcons = () => {

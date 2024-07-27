@@ -1,3 +1,4 @@
+// IMPORT MUI
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -7,15 +8,16 @@ import {
   Button,
   Card,
   CardContent,
-  CardMedia,
   Box,
   Avatar,
   Rating,
 } from "@mui/material";
 import { styled } from "@mui/system";
-import { Review } from "../ReviewPage";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import Link from "next/link";
+
+// TYPES
+import { Review } from "@/types/Review";
 
 const StyledContainer = styled(Container)({
   display: "flex",

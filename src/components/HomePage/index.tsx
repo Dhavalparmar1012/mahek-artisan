@@ -17,9 +17,11 @@ import { MainContainerSpace } from "../ReviewPage/Common.styled";
 import { InformationLayoutContainer } from "./HomePage.styled";
 import ServiceMenu from "./ServiceMenu";
 import ReviewStatus from "./ReviewStatus";
-import Service from "./Service";
 import ContactForm from "../ContactPage/ContactForm";
 import ScrollToTopIcons from "./ScrollToTopIcons";
+
+// TYPES
+import Service from "./Service";
 
 const HomePage = () => {
   const images = [

@@ -1,10 +1,10 @@
 //IMPORT MUI
 import * as Yup from "yup";
 import axios from "axios";
+import moment from "moment";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
-import MainLayout from "@/layouts/MainLayout/MainDashboardLayout";
 import Scrollbars from "react-custom-scrollbars-2";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -13,36 +13,34 @@ import Divider from "@mui/material/Divider";
 import PersonIcon from "@mui/icons-material/Person";
 import InputAdornment from "@mui/material/InputAdornment";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import moment from "moment";
 
-//IMPORT PROJECT
+// IMPORT PROJECT
+import MainLayout from "@/layouts/MainLayout/MainDashboardLayout";
 import InputText from "../UIComponent/InputText";
 import ContainerV2 from "../UIComponent/ContainerV2";
 import UINewTypography from "../UIComponent/UINewTypography";
 import { InformationLayoutContainer } from "../HomePage/HomePage.styled";
-import { HeadlinePink, MainContainerSpace } from "./Common.styled";
 import {
   ReviewDividerContainer,
   ReviewFormButton,
   ReviewFormContainer,
   ReviewFormField,
   ReviewFormSeparate,
+  ReviewPaginationContainer,
   ReviewRatingContainer,
   ReviewTitleMainContainer,
   ReviewViewMainContainer,
 } from "./Review.styled";
-import { format } from "path";
 import StyleButton from "../UIComponent/StyleButton";
+import {
+  HeadlinePink,
+  MainContainerSpace,
+  ServicesTitle,
+  TitleLineContainer,
+} from "./Common.styled";
 
-export interface Review {
-  _id: string;
-  fname: string;
-  email: string;
-  rating: number;
-  country: string;
-  review: string;
-  createdAt: string;
-}
+// TYPES
+import { Review } from "@/types/Review";
 
 const ReviewPage = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -101,7 +99,6 @@ const ReviewPage = () => {
         toast.error(res.data.message || "Submission failed");
       }
     } catch (error) {
-      console.error(error);
       toast.error("Something went wrong");
     }
     setSubmitting(false);
@@ -121,7 +118,7 @@ const ReviewPage = () => {
       setReviews(res.data.reviewsList);
       setTotalPages(Math.ceil(res.data.totalReviews / reviewsPerPage));
     } catch (error) {
-      console.error("Failed to fetch reviews", error);
+      toast.error("Failed to fetch reviews");
     }
   };
 
@@ -177,22 +174,12 @@ const ReviewPage = () => {
           <ContainerV2>
             <MainContainerSpace>
               <ReviewTitleMainContainer>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 0.5,
-                  }}
-                >
-                  <UINewTypography
-                    variant="h2"
-                    sx={{ textAlign: "center", color: "#6488ea" }}
-                  >
+                <TitleLineContainer>
+                  <ServicesTitle variant="h2">
                     Thank you for visiting our mehndi
-                  </UINewTypography>
+                  </ServicesTitle>
                   <HeadlinePink />
-                </Box>
+                </TitleLineContainer>
                 <UINewTypography variant="SubtitleLargeBold" textAlign="center">
                   It has been a true joy to work with all my wonderful brides
                   and their families. Thank you for welcoming me into your
@@ -203,12 +190,7 @@ const ReviewPage = () => {
 
               <form onSubmit={handleSubmit}>
                 <ReviewTitleMainContainer>
-                  <UINewTypography
-                    variant="h2"
-                    sx={{ textAlign: "center", color: "#6488ea" }}
-                  >
-                    Submit your review
-                  </UINewTypography>
+                  <ServicesTitle variant="h2">Submit your review</ServicesTitle>
                   <ReviewFormContainer>
                     <ReviewFormField>
                       <ReviewFormSeparate>
@@ -383,14 +365,7 @@ const ReviewPage = () => {
                   </UINewTypography>
                 )}
               </ReviewViewMainContainer>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  mt: 2,
-                }}
-              >
+              <ReviewPaginationContainer>
                 <Button
                   onClick={handlePreviousPage}
                   disabled={currentPage === 1}
@@ -406,7 +381,7 @@ const ReviewPage = () => {
                 >
                   Next
                 </Button>
-              </Box>
+              </ReviewPaginationContainer>
             </MainContainerSpace>
           </ContainerV2>
         </MainLayout>

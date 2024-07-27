@@ -1,15 +1,17 @@
-import Box from "@mui/material/Box";
-
-import UINewTypography from "../UIComponent/UINewTypography";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import IconButton from "@mui/material/IconButton";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+// IMPORT MUI
 import { useState } from "react";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+
+// IMPORT PROJECT
 import {
   BenefitsItemContainer,
   BenefitsItemContent,
 } from "./MehndiItem.styled";
 import ModernDialog from "./ModernDialog";
+import UINewTypography from "../UIComponent/UINewTypography";
 
 const Modern = ({ image, title }: { image: string; title: string }) => {
   const [isFavorite, setIsFavorite] = useState(false);

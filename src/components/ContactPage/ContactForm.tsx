@@ -2,14 +2,11 @@
 import React from "react";
 import * as Yup from "yup";
 import axios from "axios";
-import { toast } from "react-toastify";
 import { useFormik } from "formik";
-import Box from "@mui/material/Box";
+import { toast } from "react-toastify";
 import Grid from "@mui/material/Grid";
 
 //PROJECT IMPORT
-import UINewTypography from "../UIComponent/UINewTypography";
-import { HeadlinePink } from "../ReviewPage/Common.styled";
 import {
   ReviewFormField,
   ReviewFormSeparate,
@@ -17,7 +14,13 @@ import {
 } from "../ReviewPage/Review.styled";
 import InputText from "../UIComponent/InputText";
 import StyleButton from "../UIComponent/StyleButton";
-import { ContactContainer } from "../HomePage/HomePage.styled";
+import UINewTypography from "../UIComponent/UINewTypography";
+import {
+  HeadlinePink,
+  ServicesTitle,
+  TitleLineContainer,
+} from "../ReviewPage/Common.styled";
+import { ContactContainer, ContactMainContainer } from "./ContactUs.styled";
 
 const ContactForm = () => {
   const validationSchema = Yup.object({
@@ -68,7 +71,6 @@ const ContactForm = () => {
         toast.error(res.data.message || "Submission failed");
       }
     } catch (error) {
-      console.error(error);
       toast.error("Something went wrong");
     }
     setSubmitting(false);
@@ -76,19 +78,10 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <ReviewTitleMainContainer>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 0.5,
-          }}
-        >
-          <UINewTypography variant="h2" textAlign="center" color="#6488ea">
-            Contact us
-          </UINewTypography>
+        <TitleLineContainer>
+          <ServicesTitle variant="h2">Contact us</ServicesTitle>
           <HeadlinePink />
-        </Box>
+        </TitleLineContainer>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={6} lg={6}>
             <iframe
@@ -102,14 +95,7 @@ const ContactForm = () => {
             ></iframe>
           </Grid>
           <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 1.5,
-                width: "100%",
-              }}
-            >
+            <ContactMainContainer>
               <ReviewFormField>
                 <ReviewFormSeparate>
                   <ContactContainer>
@@ -206,7 +192,7 @@ const ContactForm = () => {
               >
                 Submit
               </StyleButton>
-            </Box>
+            </ContactMainContainer>
           </Grid>
         </Grid>
       </ReviewTitleMainContainer>

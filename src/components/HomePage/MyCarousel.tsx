@@ -1,6 +1,10 @@
+// IMPORT MUI
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Box, Container } from "@mui/material";
+
+// IMPORT PROJECT
+import { ServicesTitle } from "../ReviewPage/Common.styled";
 
 const items = [
   {
@@ -80,16 +84,15 @@ const Item = ({ item }: { item: any }) => {
         component="img"
         sx={{
           display: "block",
-          minHeight: 400,
+          maxHeight: { md: 400 },
+          height: { xs: 400, sm: 400 },
           width: "100%",
           objectFit: "contain",
         }}
         src={item.imgPath}
         alt={item.name}
       />
-      <Box sx={{ textAlign: "center", color: "#6488ea" }}>
-        <h2>{item.name}</h2>
-      </Box>
+      <ServicesTitle variant="h2">{item.name}</ServicesTitle>
     </Paper>
   );
 };
