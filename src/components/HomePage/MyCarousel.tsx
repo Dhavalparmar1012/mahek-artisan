@@ -80,14 +80,14 @@ const Item = ({ item }: { item: any }) => {
         component="img"
         sx={{
           display: "block",
-          maxHeight: 400,
+          minHeight: 400,
           width: "100%",
           objectFit: "contain",
         }}
         src={item.imgPath}
         alt={item.name}
       />
-      <Box sx={{ padding: 2, textAlign: "center", color: "#6488ea" }}>
+      <Box sx={{ textAlign: "center", color: "#6488ea" }}>
         <h2>{item.name}</h2>
       </Box>
     </Paper>

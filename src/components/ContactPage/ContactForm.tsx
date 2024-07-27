@@ -76,10 +76,19 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <ReviewTitleMainContainer>
-        <UINewTypography variant="h2" textAlign="center" color="#6488ea">
-          Contact us
-        </UINewTypography>
-        <HeadlinePink />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 0.5,
+          }}
+        >
+          <UINewTypography variant="h2" textAlign="center" color="#6488ea">
+            Contact us
+          </UINewTypography>
+          <HeadlinePink />
+        </Box>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={6} lg={6}>
             <iframe

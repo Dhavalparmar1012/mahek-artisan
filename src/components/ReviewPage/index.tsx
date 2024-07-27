@@ -177,13 +177,22 @@ const ReviewPage = () => {
           <ContainerV2>
             <MainContainerSpace>
               <ReviewTitleMainContainer>
-                <UINewTypography
-                  variant="h2"
-                  sx={{ textAlign: "center", color: "#6488ea" }}
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 0.5,
+                  }}
                 >
-                  Thank you for visiting our mehndi
-                </UINewTypography>
-                <HeadlinePink />
+                  <UINewTypography
+                    variant="h2"
+                    sx={{ textAlign: "center", color: "#6488ea" }}
+                  >
+                    Thank you for visiting our mehndi
+                  </UINewTypography>
+                  <HeadlinePink />
+                </Box>
                 <UINewTypography variant="SubtitleLargeBold" textAlign="center">
                   It has been a true joy to work with all my wonderful brides
                   and their families. Thank you for welcoming me into your
