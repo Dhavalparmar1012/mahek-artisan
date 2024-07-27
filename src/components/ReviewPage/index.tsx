@@ -162,11 +162,10 @@ const ReviewPage = () => {
             }}
           >
             <UINewTypography
-              variant="h1"
               color="text.secondary"
               sx={{
                 textAlign: "center",
-                fontSize: { xs: "16px", sm: "32px", md: "48px" },
+                fontSize: { xs: "20px", sm: "32px", md: "48px" },
                 fontWeight: 700,
                 position: "relative",
                 zIndex: 1,
