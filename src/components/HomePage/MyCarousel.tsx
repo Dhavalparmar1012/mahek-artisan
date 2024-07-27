@@ -92,7 +92,7 @@ const Item = ({ item }: { item: any }) => {
         src={item.imgPath}
         alt={item.name}
       />
-      <ServicesTitle variant="h2">{item.name}</ServicesTitle>
+      <ServicesTitle variant="h6">{item.name}</ServicesTitle>
     </Paper>
   );
 };
