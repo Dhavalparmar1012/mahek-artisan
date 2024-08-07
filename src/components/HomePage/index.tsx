@@ -22,34 +22,9 @@ import ScrollToTopIcons from "./ScrollToTopIcons";
 
 // TYPES
 import Service from "./Service";
+import { images } from "@/constants/carousel.consants";
 
 const HomePage = () => {
-  const images = [
-    "images/Mehndi_latest/Bridal_hand/Bridal_hand_1.jpg",
-    "images/Mehndi_latest/Modern/Modern_17.jpg",
-    "images/Mehndi_latest/Mehndi Tatto/Tattoo_5.jpg",
-    "images/Mehndi_latest/Bridal_leg/Bridal_leg_1.jpg",
-    "images/Mehndi_latest/Modern/Modern_13.jpg",
-    "images/Mehndi_latest/Bridal_hand/Bridal_hand_5.jpg",
-    "images/Mehndi_latest/Arbic/Arbic_1.jpg",
-    "images/Mehndi_latest/Modern/Modern_24.jpg",
-    "images/Mehndi_latest/Bridal_hand/Bridal_hand_6.jpg",
-    "images/Mehndi_latest/Modern/Modern_14.jpg",
-    "images/Mehndi_latest/Bridal_hand/Bridal_hand_10.jpg",
-    "images/Mehndi_latest/Modern/Modern_18.jpg",
-    "images/Mehndi_latest/Bridal_hand/Bridal_hand_12.jpg",
-    "images/Mehndi_latest/Bridal_leg/Bridal_leg_2.jpg",
-    "images/Mehndi_latest/Modern/Modern_1.jpg",
-    "images/Mehndi_latest/Modern/Modern_2.jpg",
-    "images/Mehndi_latest/Modern/Modern_3.jpg",
-    "images/Mehndi_latest/Arbic/Arbic_2.jpg",
-    "images/Mehndi_latest/Mehndi Tatto/Tattoo_4.jpg",
-    "images/Mehndi_latest/Mehndi Tatto/Tattoo_6.jpg",
-    "images/Mehndi_latest/Mehndi Tatto/Tattoo_7.jpg",
-    "images/Mehndi_latest/Mehndi Tatto/Tattoo_10.jpg",
-    "images/Mehndi_latest/Mehndi Tatto/Tattoo_14.jpg",
-  ];
-
   return (
     <>
       <Scrollbars autoHide autoHeight autoHeightMax={"100vh"}>

@@ -7,7 +7,7 @@ export const AboutTitle = styled(UINewTypography)(() => ({
   textAlign: "left",
 }));
 
-export const ArtMainContainer = styled(Box)(({ theme }) => ({
+export const ArtMainContainer = styled(Box)(() => ({
   display: "flex",
   justifyContent: "center",
   flexDirection: "column",
@@ -39,7 +39,7 @@ export const ArtImageBox = styled("img")(({ theme }) => ({
   },
 }));
 
-export const ArtSImageBox = styled("img")(({ theme }) => ({
+export const ArtSImageBox = styled("img")(() => ({
   width: "100%",
 }));
 

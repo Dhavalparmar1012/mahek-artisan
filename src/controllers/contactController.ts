@@ -6,6 +6,7 @@ import {
 import UserContact from "@/models/UserContact";
 import { NextApiRequest, NextApiResponse } from "next";
 import connectDB from "@/utils/db";
+import { sendContactSubmissionEmail } from "@/utils/mailer";
 
 // Controller to submit a contacts
 export const submitContactController = async (
@@ -48,6 +49,14 @@ export const submitContactController = async (
       telephone,
       message,
     }).save();
+
+    await sendContactSubmissionEmail({
+      email,
+      fname,
+      lname,
+      telephone,
+      message,
+    });
 
     res.status(201).send({
       success: true,

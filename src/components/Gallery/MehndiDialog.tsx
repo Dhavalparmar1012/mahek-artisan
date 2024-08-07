@@ -1,22 +1,23 @@
-// IMPORT MUI
 import React from "react";
+
+// IMPORT MUI
 import Box from "@mui/material/Box";
 import Dialog from "@mui/material/Dialog";
 
-const BridalDialog_hand = ({
+const MehndiDialog = ({
   open,
   handleClose,
-  image,
+  imageSrc,
 }: {
   open: boolean;
   handleClose: () => void;
-  image: string;
+  imageSrc: string;
 }) => {
   return (
     <Dialog open={open} onClose={handleClose} maxWidth={false}>
       <Box
         component="img"
-        src={`/images/Mehndi_latest/Bridal_hand/${image}.jpg`}
+        src={imageSrc}
         sx={{
           width: "100%",
           maxWidth: "614px",
@@ -28,4 +29,4 @@ const BridalDialog_hand = ({
   );
 };
 
-export default BridalDialog_hand;
+export default MehndiDialog;

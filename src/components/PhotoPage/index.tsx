@@ -9,26 +9,8 @@ import {
   InputLabel,
   SelectChangeEvent,
 } from "@mui/material";
-
-interface CategoryData {
-  _id: string;
-  category: number;
-  photo?: string;
-}
-
-interface MultipleOptions {
-  id: number;
-  name: string;
-}
-
-const CategoryType: MultipleOptions[] = [
-  { id: 0, name: "Bridal Hand" },
-  { id: 1, name: "Bridal Leg" },
-  { id: 2, name: "Modern Mehndi" },
-  { id: 3, name: "Arabic Mehndi" },
-  { id: 4, name: "Marwari Mehndi" },
-  { id: 5, name: "Mehndi Tattoo" },
-];
+import { CategoryData } from "@/types/CategoryData";
+import { CategoryType } from "@/constants/category.constants";
 
 const CategoryPhotos = () => {
   const [categoryData, setCategoryData] = useState<CategoryData[]>([]);

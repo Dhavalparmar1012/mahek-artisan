@@ -1,5 +1,6 @@
-//MUI IMPORT
 import React from "react";
+
+//MUI IMPORT
 import Box from "@mui/material/Box";
 import Scrollbars from "react-custom-scrollbars-2";
 

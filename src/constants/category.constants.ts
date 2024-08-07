@@ -1,4 +1,4 @@
-import { MultipleOptions } from "./type";
+import { MultipleOptions } from "../types/type";
 
 export const CategoryType: MultipleOptions[] = [
   { id: 0, name: "Bridal Hand" },

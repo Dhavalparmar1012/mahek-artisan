@@ -1,8 +1,9 @@
+import React, { useState } from "react";
+
 // IMPORT MUI
-import { useState } from "react";
 import Box from "@mui/material/Box";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import IconButton from "@mui/material/IconButton";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 // IMPORT PROJECT
@@ -10,10 +11,13 @@ import {
   BenefitsItemContainer,
   BenefitsItemContent,
 } from "./MehndiItem.styled";
-import BridalDialog_hand from "./BridalDialog_hand";
+import MehndiDialog from "./MehndiDialog";
 import UINewTypography from "../UIComponent/UINewTypography";
 
-const Bridal_hand = ({ image, title }: { image: string; title: string }) => {
+// TYPES
+import { MehndiItemProps } from "@/types/MehndiImage";
+
+const MehndiItem = ({ image, title, type }: MehndiItemProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -28,12 +32,26 @@ const Bridal_hand = ({ image, title }: { image: string; title: string }) => {
   const handleCloseDialog = () => {
     setOpenDialog(false);
   };
+
+  const getImagePath = () => {
+    const typePathMap: { [key: string]: string } = {
+      "Bridal hand": "Bridal_hand",
+      "Bridal leg": "Bridal_leg",
+      "Modern mehndi": "Modern",
+      "Arabic mehndi": "Arbic",
+      "Marwari mehndi": "Marwari",
+      "Mehndi Tattoo": "Mehndi Tatto",
+    };
+
+    return `/images/Mehndi_latest/${typePathMap[type]}/${image}.jpg`;
+  };
+
   return (
     <>
       <BenefitsItemContainer>
         <Box
           component="img"
-          src={`/images/Mehndi_latest/Bridal_hand/${image}.jpg`}
+          src={getImagePath()}
           width="100%"
           height={299}
           onClick={handleImageClick}
@@ -67,13 +85,13 @@ const Bridal_hand = ({ image, title }: { image: string; title: string }) => {
           </IconButton>
         </BenefitsItemContent>
       </BenefitsItemContainer>
-      <BridalDialog_hand
+      <MehndiDialog
         open={openDialog}
         handleClose={handleCloseDialog}
-        image={image}
+        imageSrc={getImagePath()}
       />
     </>
   );
 };
 
-export default Bridal_hand;
+export default MehndiItem;
