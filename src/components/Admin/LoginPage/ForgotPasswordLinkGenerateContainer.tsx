@@ -62,16 +62,22 @@ const ForgotPasswordLinkGenerateContainer = () => {
       );
 
       if (response.status === 200) {
-        toast.success("OTP sent to your email.");
+        toast.success(response.data.message);
         return true;
       } else {
-        toast.error(response.data.message);
+        toast.error(response.data.message || "An error occurred");
       }
-    } catch (error) {
-      toast.error("Something went wrong. Please try again.");
-      return false;
+    } catch (error: any) {
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
     }
-    setSubmitting(false);
   };
 
   const handleSubmitForm = async (values: any) => {
@@ -79,6 +85,7 @@ const ForgotPasswordLinkGenerateContainer = () => {
     if (success) {
       setStep(1);
     }
+    setSubmitting(false);
   };
 
   return (

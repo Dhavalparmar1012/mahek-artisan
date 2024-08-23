@@ -47,7 +47,7 @@ const ValidateOtp = () => {
 
   const handleSubmitForm = async (values: any) => {
     try {
-      const res = await axios.post(
+      const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/validate-otp`,
         {
           email,
@@ -55,18 +55,25 @@ const ValidateOtp = () => {
         }
       );
 
-      if (res && res.data.success) {
-        toast.success(res.data.message);
+      if (response.status === 200) {
+        toast.success(response.data.message);
         router.push({
           pathname: "/reset-password",
           query: { email },
         });
       } else {
-        toast.error(res.data.message || "Invalid OTP. Please try again.");
+        toast.error(response.data.message || "Invalid OTP. Please try again.");
       }
-    } catch (error) {
-      console.error("Error in OTP validation:", error);
-      toast.error("Something went wrong. Please try again.");
+    } catch (error: any) {
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
     }
     setSubmitting(false);
   };
