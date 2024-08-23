@@ -8,7 +8,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import connectDB from "@/utils/db";
 import { sendContactSubmissionEmail } from "@/utils/mailer";
 
-// Controller to submit a contacts
 export const submitContactController = async (
   req: SubmitContactRequest,
   res: ControllerResponse<any>
@@ -31,7 +30,6 @@ export const submitContactController = async (
     if (!message) {
       return res.send({ error: "Message is required" });
     }
-    // Check if user with same email already exists
     const existingUser = await UserContact.findOne({ email });
 
     if (existingUser) {

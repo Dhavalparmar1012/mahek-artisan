@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse, NextApiHandler } from "next";
 import JWT from "jsonwebtoken";
 import userModel from "../models/userModel";
 
-// Extend NextApiRequest interface to include user property
 interface AuthenticatedRequest extends NextApiRequest {
   user?: any; // Adjust type as per your user model
 }

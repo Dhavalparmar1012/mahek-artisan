@@ -3,3 +3,9 @@ export type CategoryData = {
   category: number;
   photo?: string;
 };
+
+export interface CategoryViewerData {
+  _id: string;
+  category: string;
+  photo?: string;
+}

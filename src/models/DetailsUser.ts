@@ -1,16 +1,7 @@
-import mongoose, { Document } from "mongoose";
+import mongoose from "mongoose";
+import { IDetailsUserModel } from "@/controllers/interfaces";
 
-export interface IDetailsUser extends Document {
-  email: string;
-  fname: string;
-  rating: number;
-  review: string;
-  country: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-const userSchema = new mongoose.Schema<IDetailsUser>(
+const userSchema = new mongoose.Schema<IDetailsUserModel>(
   {
     email: {
       type: String,
@@ -41,6 +32,6 @@ const userSchema = new mongoose.Schema<IDetailsUser>(
 
 const DetailsUser =
   mongoose.models.DetailsUser ||
-  mongoose.model<IDetailsUser>("DetailsUser", userSchema);
+  mongoose.model<IDetailsUserModel>("DetailsUser", userSchema);
 
 export default DetailsUser;

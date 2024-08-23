@@ -32,18 +32,13 @@ import {
 
 // TYPES
 import { CategoryType } from "@/constants/category.constants";
-
-interface CategoryData {
-  _id: string;
-  category: string;
-  photo?: string;
-}
+import { CategoryViewerData } from "@/types/CategoryData";
 
 const ViewPage = () => {
   const { push } = useRouter();
 
   const { isAuthenticated, logout } = useAuth();
-  const [categoryData, setCategoryData] = useState<CategoryData[]>([]);
+  const [categoryData, setCategoryData] = useState<CategoryViewerData[]>([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 

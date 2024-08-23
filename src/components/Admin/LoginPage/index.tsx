@@ -1,21 +1,22 @@
 import { useState } from "react";
 
 // MATERIAL - UI
+import * as Yup from "yup";
+import axios from "axios";
+import Link from "next/link";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { useFormik } from "formik";
-import * as Yup from "yup";
-import axios from "axios";
 import InputAdornment from "@mui/material/InputAdornment";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 // PROJECT IMPORTS
-import { useAuth } from "@/context/AuthContext/authContext";
-import UINewTypography from "../../UIComponent/UINewTypography";
 import InputText from "../../UIComponent/InputText";
 import LoginLayout from "@/layouts/LoginLayout";
+import { useAuth } from "@/context/AuthContext/authContext";
+import UINewTypography from "../../UIComponent/UINewTypography";
 import {
   LoginPageMainContainer,
   LoginContainer,
@@ -26,8 +27,8 @@ import StyleButton from "../../UIComponent/StyleButton";
 const LoginPage = () => {
   const { push } = useRouter();
 
-  const [showPassword, setShowPassword] = useState(false);
   const { login } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -150,6 +151,18 @@ const LoginPage = () => {
             >
               Sign In
             </StyleButton>
+            <Link
+              shallow={true}
+              href="/forgot-password"
+              style={{
+                textDecoration: "none",
+                textAlign: "center",
+              }}
+            >
+              <UINewTypography variant="buttonLargeMenu" color="primary.main">
+                Forgot Password
+              </UINewTypography>
+            </Link>
           </LoginContainer>
         </form>
       </LoginPageMainContainer>

@@ -1,17 +1,6 @@
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  ReactNode,
-} from "react";
-
-interface AuthContextType {
-  isAuthenticated: boolean;
-  login: (token: string) => void;
-  logout: () => void;
-}
+import { AuthContextType, AuthProviderProps } from "@/types/authContext";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -22,10 +11,6 @@ export const useAuth = () => {
   }
   return context;
 };
-
-interface AuthProviderProps {
-  children: ReactNode;
-}
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

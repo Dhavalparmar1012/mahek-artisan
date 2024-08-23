@@ -28,6 +28,16 @@ export interface IDetailsUser extends Document {
   country: string;
 }
 
+export interface IDetailsUserModel extends Document {
+  email: string;
+  fname: string;
+  rating: number;
+  review: string;
+  country: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export interface SubmitContactRequest extends Request {
   body: {
     email: string;
@@ -44,4 +54,14 @@ export interface IUserContact extends Document {
   lname: string;
   telephone: string;
   message: string;
+}
+
+export interface IUserContactModel extends Document {
+  email: string;
+  fname: string;
+  lname: string;
+  message: string;
+  telephone: string;
+  createdAt: Date;
+  updatedAt: Date;
 }

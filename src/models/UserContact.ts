@@ -1,16 +1,7 @@
-import mongoose, { Document } from "mongoose";
+import mongoose from "mongoose";
+import { IUserContactModel } from "@/controllers/interfaces";
 
-export interface IUserContact extends Document {
-  email: string;
-  fname: string;
-  lname: string;
-  message: string;
-  telephone: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-const userSchema = new mongoose.Schema<IUserContact>(
+const userSchema = new mongoose.Schema<IUserContactModel>(
   {
     email: {
       type: String,
@@ -39,6 +30,6 @@ const userSchema = new mongoose.Schema<IUserContact>(
 
 const UserContact =
   mongoose.models.UserContact ||
-  mongoose.model<IUserContact>("UserContact", userSchema);
+  mongoose.model<IUserContactModel>("UserContact", userSchema);
 
 export default UserContact;
