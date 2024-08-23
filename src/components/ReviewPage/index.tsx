@@ -188,7 +188,11 @@ const ReviewPage = () => {
                 </UINewTypography>
               </ReviewTitleMainContainer>
 
-              <form onSubmit={handleSubmit}>
+              <Box
+                component="form"
+                onSubmit={handleSubmit}
+                sx={{ width: "100%" }}
+              >
                 <ReviewTitleMainContainer>
                   <ServicesTitle variant="h2">Submit your review</ServicesTitle>
                   <ReviewFormContainer>
@@ -314,7 +318,7 @@ const ReviewPage = () => {
                     </ReviewFormButton>
                   </ReviewFormContainer>
                 </ReviewTitleMainContainer>
-              </form>
+              </Box>
 
               <ReviewViewMainContainer>
                 <Divider
