@@ -1,9 +1,8 @@
-// IMPORT MUI
 import React from "react";
 
 // IMPORT PROJECT
-import { ReviewTitleMainContainer } from "../ReviewPage/Review.styled";
 import UINewTypography from "../UIComponent/UINewTypography";
+import { ReviewTitleMainContainer } from "../ReviewPage/Review.styled";
 import {
   HeadlinePink,
   ServicesTitle,

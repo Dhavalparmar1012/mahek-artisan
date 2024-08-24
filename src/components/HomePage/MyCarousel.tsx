@@ -1,11 +1,12 @@
-// IMPORT MUI
 import React from "react";
+
+// IMPORT MUI
 import Carousel from "react-material-ui-carousel";
 import { Paper, Box, Container } from "@mui/material";
 
 // IMPORT PROJECT
-import { ServicesTitle } from "../ReviewPage/Common.styled";
 import { items } from "@/constants/carousel.consants";
+import { ServicesTitle } from "../ReviewPage/Common.styled";
 
 const MyCarousel = () => {
   return (

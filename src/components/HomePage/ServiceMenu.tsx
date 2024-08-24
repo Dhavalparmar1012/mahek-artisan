@@ -1,5 +1,6 @@
-// IMPORT MUI
 import React from "react";
+
+// IMPORT MUI
 import Grid from "@mui/material/Grid";
 
 // IMPORT PROJECT

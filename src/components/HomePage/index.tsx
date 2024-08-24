@@ -1,5 +1,6 @@
-//IMPORT MUI
 import React from "react";
+
+//IMPORT MUI
 import Box from "@mui/material/Box";
 import Scrollbars from "react-custom-scrollbars-2";
 import { Pagination } from "swiper/modules";
@@ -12,13 +13,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import MainLayout from "@/layouts/MainLayout/MainDashboardLayout";
 import MyCarousel from "./MyCarousel";
 import ContainerV2 from "../UIComponent/ContainerV2";
-import UINewTypography from "../UIComponent/UINewTypography";
-import { MainContainerSpace } from "../ReviewPage/Common.styled";
-import { InformationLayoutContainer } from "./HomePage.styled";
 import ServiceMenu from "./ServiceMenu";
 import ReviewStatus from "./ReviewStatus";
 import ContactForm from "../ContactPage/ContactForm";
 import ScrollToTopIcons from "./ScrollToTopIcons";
+import InformationSection from "../common/InformationSection/InformationSection";
+import { MainContainerSpace } from "../ReviewPage/Common.styled";
 
 // TYPES
 import Service from "./Service";
@@ -29,39 +29,7 @@ const HomePage = () => {
     <>
       <Scrollbars autoHide autoHeight autoHeightMax={"100vh"}>
         <MainLayout>
-          <InformationLayoutContainer
-            sx={{
-              position: "relative",
-              height: { lg: 190, md: 140, sm: 105, xs: 95 },
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                backgroundImage: "url(/images/wallpaper.jpg)",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                opacity: 0.6,
-                zIndex: 0,
-              },
-            }}
-          >
-            <UINewTypography
-              color="text.secondary"
-              sx={{
-                textAlign: "center",
-                fontSize: { xs: "20px", sm: "32px", md: "48px" },
-                fontWeight: 700,
-                position: "relative",
-                zIndex: 1,
-              }}
-            >
-              Welcome to Mehndi Creations!
-            </UINewTypography>
-          </InformationLayoutContainer>
+          <InformationSection title="Welcome to Mehndi Creations!" />
           <ContainerV2>
             <MainContainerSpace>
               <MyCarousel />

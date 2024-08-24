@@ -29,9 +29,9 @@ import {
   ViewPageContainer,
   ViewPageIcon,
 } from "../ViewPage/ViewPage.styled";
-import { Review } from "@/types/Review";
 
 // TYPES
+import { Review } from "@/types/Review";
 
 const ViewReviewPage = () => {
   const { push } = useRouter();

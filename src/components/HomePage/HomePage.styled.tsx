@@ -3,14 +3,7 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import UINewTypography from "../UIComponent/UINewTypography";
 
-export const InformationLayoutContainer = styled(Box)(() => ({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  flexDirection: "column",
-}));
-
+// SERVICE MENU
 export const MehndiServiceMainContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -33,6 +26,7 @@ export const MehndiServiceTitle = styled(UINewTypography)(() => ({
   },
 }));
 
+// SCROLL TOP ICON
 export const ScrollToTopIconsContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",

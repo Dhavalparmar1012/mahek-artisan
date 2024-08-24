@@ -1,5 +1,4 @@
 // MATERIAL - UI
-import Link from "next/link";
 import { Box } from "@mui/material";
 
 // PROJECT IMPORTS
@@ -9,7 +8,6 @@ import {
   CheckInBoxMainContainer,
   CheckInBoxContainer,
   CheckInBoxTitle,
-  CheckInBoxLogin,
 } from "./CheckInBox.styled";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -35,6 +33,7 @@ const CheckInbox = ({ email }: { email: string }) => {
 
     return () => clearInterval(interval);
   }, [router, email]);
+
   return (
     <LoginLayout>
       <CheckInBoxMainContainer>

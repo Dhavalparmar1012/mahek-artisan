@@ -1,6 +1,8 @@
-// IMPORT MUI
 import React, { useEffect, useState } from "react";
+
+// IMPORT MUI
 import axios from "axios";
+import Link from "next/link";
 import {
   Container,
   Grid,
@@ -14,7 +16,6 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import Link from "next/link";
 
 // TYPES
 import { Review } from "@/types/Review";

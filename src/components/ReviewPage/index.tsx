@@ -19,7 +19,6 @@ import MainLayout from "@/layouts/MainLayout/MainDashboardLayout";
 import InputText from "../UIComponent/InputText";
 import ContainerV2 from "../UIComponent/ContainerV2";
 import UINewTypography from "../UIComponent/UINewTypography";
-import { InformationLayoutContainer } from "../HomePage/HomePage.styled";
 import {
   ReviewDividerContainer,
   ReviewFormButton,
@@ -38,6 +37,7 @@ import {
   ServicesTitle,
   TitleLineContainer,
 } from "./Common.styled";
+import InformationSection from "../common/InformationSection/InformationSection";
 
 // TYPES
 import { Review } from "@/types/Review";
@@ -87,16 +87,16 @@ const ReviewPage = () => {
 
   const handleSubmitForm = async (values: any, resetForm: () => void) => {
     try {
-      const res = await axios.post(
+      const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/reviews/submit`,
         values
       );
-      if (res && res.data.success) {
-        toast.success(res.data.message);
+      if (response && response.data.success) {
+        toast.success(response.data.message);
         fetchReviews(currentPage);
         resetForm();
       } else {
-        toast.error(res.data.message || "Submission failed");
+        toast.error(response.data.message || "Submission failed");
       }
     } catch (error) {
       toast.error("Something went wrong");
@@ -106,7 +106,7 @@ const ReviewPage = () => {
 
   const fetchReviews = async (page: number) => {
     try {
-      const res = await axios.get(
+      const response = await axios.get(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/reviews/get`,
         {
           params: {
@@ -115,8 +115,8 @@ const ReviewPage = () => {
           },
         }
       );
-      setReviews(res.data.reviewsList);
-      setTotalPages(Math.ceil(res.data.totalReviews / reviewsPerPage));
+      setReviews(response.data.reviewsList);
+      setTotalPages(Math.ceil(response.data.totalReviews / reviewsPerPage));
     } catch (error) {
       toast.error("Failed to fetch reviews");
     }
@@ -138,39 +138,7 @@ const ReviewPage = () => {
     <>
       <Scrollbars autoHide autoHeight autoHeightMax={"100vh"}>
         <MainLayout>
-          <InformationLayoutContainer
-            sx={{
-              position: "relative",
-              height: { lg: 190, md: 140, sm: 105, xs: 95 },
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                backgroundImage: "url(/images/wallpaper.jpg)",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                opacity: 0.6,
-                zIndex: 0,
-              },
-            }}
-          >
-            <UINewTypography
-              color="text.secondary"
-              sx={{
-                textAlign: "center",
-                fontSize: { xs: "20px", sm: "32px", md: "48px" },
-                fontWeight: 700,
-                position: "relative",
-                zIndex: 1,
-              }}
-            >
-              Review
-            </UINewTypography>
-          </InformationLayoutContainer>
+          <InformationSection title="Review" />
           <ContainerV2>
             <MainContainerSpace>
               <ReviewTitleMainContainer>
@@ -191,7 +159,7 @@ const ReviewPage = () => {
               <Box
                 component="form"
                 onSubmit={handleSubmit}
-                sx={{ width: "100%" }}
+                sx={{ width: { xs: "100%", sm: "auto" } }}
               >
                 <ReviewTitleMainContainer>
                   <ServicesTitle variant="h2">Submit your review</ServicesTitle>

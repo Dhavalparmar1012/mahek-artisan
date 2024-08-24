@@ -4,15 +4,10 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Dialog from "@mui/material/Dialog";
 
-const MehndiDialog = ({
-  open,
-  handleClose,
-  imageSrc,
-}: {
-  open: boolean;
-  handleClose: () => void;
-  imageSrc: string;
-}) => {
+// TYPES
+import { MahendiDialog } from "@/types/dialog";
+
+const MehndiDialog = ({ open, handleClose, imageSrc }: MahendiDialog) => {
   return (
     <Dialog open={open} onClose={handleClose} maxWidth={false}>
       <Box

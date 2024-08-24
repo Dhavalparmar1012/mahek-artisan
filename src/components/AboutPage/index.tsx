@@ -8,7 +8,7 @@ import Scrollbars from "react-custom-scrollbars-2";
 import ContainerV2 from "../UIComponent/ContainerV2";
 import MainLayout from "@/layouts/MainLayout/MainDashboardLayout";
 import UINewTypography from "../UIComponent/UINewTypography";
-import { InformationLayoutContainer } from "../HomePage/HomePage.styled";
+import InformationSection from "../common/InformationSection/InformationSection";
 import {
   AboutTitle,
   ArtCommonContainer,
@@ -22,39 +22,7 @@ const ArtPage = () => {
   return (
     <Scrollbars autoHide autoHeight autoHeightMax={"100vh"}>
       <MainLayout>
-        <InformationLayoutContainer
-          sx={{
-            position: "relative",
-            height: { lg: 190, md: 140, sm: 105, xs: 95 },
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundImage: "url(/images/wallpaper.jpg)",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              opacity: 0.6,
-              zIndex: 0,
-            },
-          }}
-        >
-          <UINewTypography
-            color="text.secondary"
-            sx={{
-              textAlign: "center",
-              fontSize: { xs: "20px", sm: "32px", md: "48px" },
-              fontWeight: 700,
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            Art Of Mehndi
-          </UINewTypography>
-        </InformationLayoutContainer>
+        <InformationSection title="Art Of Mehndi" />
         <ContainerV2>
           <ArtMainContainer>
             <ArtImageBox src="images/Mehndi_latest/Bridal_hand/Bridal_hand_6.jpg" />

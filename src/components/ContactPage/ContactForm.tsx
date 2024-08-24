@@ -61,15 +61,15 @@ const ContactForm = () => {
 
   const handleSubmitForm = async (values: any, resetForm: () => void) => {
     try {
-      const res = await axios.post(
+      const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/contacts/submit`,
         values
       );
-      if (res && res.data.success) {
-        toast.success(res.data.message);
+      if (response && response.data.success) {
+        toast.success(response.data.message);
         resetForm();
       } else {
-        toast.error(res.data.message || "Submission failed");
+        toast.error(response.data.message || "Submission failed");
       }
     } catch (error) {
       toast.error("Something went wrong");

@@ -65,3 +65,13 @@ export interface IUserContactModel extends Document {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface ContactData {
+  _id: string;
+  fname: string;
+  lname: string;
+  email: string;
+  telephone: number;
+  message: string;
+  createdAt: string;
+}

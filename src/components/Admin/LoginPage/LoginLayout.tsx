@@ -1,8 +1,12 @@
-import GenericLayout from "@/layouts/GenericLayout";
-import StyledLoginLayout from "@/layouts/LoginLayout.styled";
-import RegionChecker from "@/layouts/RegionChecker";
-import Box from "@mui/material/Box";
 import { ReactNode } from "react";
+
+// MUI MATERIAL IMPORT
+import Box from "@mui/material/Box";
+
+// PROJECT IMPORT
+import GenericLayout from "@/layouts/GenericLayout";
+import RegionChecker from "@/layouts/RegionChecker";
+import StyledLoginLayout from "@/layouts/LoginLayout.styled";
 
 export default function LoginLayout({ children }: { children: ReactNode }) {
   return (
