@@ -38,7 +38,7 @@ const Footer = () => {
                 component="div"
                 sx={{ fontWeight: "bold", color: "text.secondary" }}
               >
-                Artisan Mahek&apos;s Creations
+                Artisan Mehndi Creations
               </Typography>
 
               <HeadlinePink />
